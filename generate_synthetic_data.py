@@ -181,18 +181,6 @@ class Logic_Model_Generator:
                     t = next_event_time
 
 
-            for head_predicate_idx in [3]:
-                t = 0
-                data[sample_ID][head_predicate_idx] = {}
-                data[sample_ID][head_predicate_idx]['time'] = [0]
-                data[sample_ID][head_predicate_idx]['state'] = [0]
-
-                for t in np.arange(1, time_horizon, 1):
-                    data[sample_ID][head_predicate_idx]['time'].append(t)
-                    cur_state = 1 - data[sample_ID][head_predicate_idx]['state'][-1]
-                    data[sample_ID][head_predicate_idx]['state'].append(cur_state)
-
-
             for head_predicate_idx in self.head_predicate_set:
                 data[sample_ID][head_predicate_idx] = {}
                 data[sample_ID][head_predicate_idx]['time'] = [0]
