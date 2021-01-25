@@ -171,7 +171,7 @@ class Logic_Model(nn.Module):
         for t in data_sample[head_predicate_idx]['time'][1:]:
             cur_intensity = self.intensity(t, head_predicate_idx, data_sample)
             intensity_transition.append(cur_intensity)
-        if len(intensity_transition) == 0: # only survival term, not event happens
+        if len(intensity_transition) == 0: # only survival term, no event happens
             log_sum = torch.tensor([0], dtype=torch.float64)
         else:
             log_sum = torch.sum(torch.log(torch.cat(intensity_transition, dim=0)))
