@@ -9,10 +9,13 @@ function: " logic_template.py" --- it is used to learn model parameters given th
 
 Logic templates introduced here look like: 
 
-# for example, consider three rules:
+# For example, consider three rules:
 
     # A and B and Equal(A,B), and Before(A, D), then D;
     
     # C and Before(C, Not D), then  Not D
     
     # D Then  E, and Equal(D, E)
+
+# Note that in this simple demo example, we assume the base transition intensity term for 0 --> 1 and 1 --> 0 are the same (just for simplicity of demonstration). 
+In practice, the base transition intensity of for 0 --> 1 and 1 --> 0 can be quite different. We can just introduce more base variables to indicate this.
